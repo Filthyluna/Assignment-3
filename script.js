@@ -5,17 +5,26 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    
+  let table = document.getElementById("grid");
+  let col = table.rows[0].cells.length;
+  let newRow = table.insertRow(-1);
+  for (let i = 0; i < col; i++) {
+    newRow.insertCell(i);
+  }
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+  // let table = document.getElementById("grid"); // Get the table
+  // table.insertBefore(table.rows[0].insertCell(-1), table.rows[0].cells[0]); // Insert a cell at the end of the first row
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+  // let table = document.getElementById("grid");
+  // let row_remove = table.rows.length - 1;
+  // table.deleteRow(row_remove);
+
 }
 
 // Remove a column
