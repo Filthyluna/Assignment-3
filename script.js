@@ -5,19 +5,26 @@ let colorSelected;
 
 // Add a row
 function addR() {
-  let table = document.getElementById("grid");
-  let col = table.rows[0].cells.length;
-  let newRow = table.insertRow(-1);
-  for (let i = 0; i < col; i++) {
-    newRow.insertCell(i);
+  numRows++;
+  let table = document.getElementById("grid"); // Get the table
+  let col = table.rows[0].cells.length;  // Get the number of columns
+  let newRow = table.insertRow(-1); // Insert a row at the end of the table
+  for (let i = 0; i < col; i++) { // Loop through the number of columns
+    newRow.insertCell(i); // Insert a cell at the end of the row and the length of the number of columns
   }
 }
 
 // Add a column
 function addC() {
-  // let table = document.getElementById("grid"); // Get the table
-  // table.insertBefore(table.rows[0].insertCell(-1), table.rows[0].cells[0]); // Insert a cell at the end of the first row
+  numCols++;
+  let table = document.getElementById("grid"); // Get the table
+  let row = table.rows.length; // Get the number of rows
+  for (let i = 0; i < row; i++) { // Loop through the number of rows
+    table.rows[i].insertCell(i); // Insert a cell at the end of the columns and the length of the number of rows 
+    //Can have -1 or i for the second parameter of insertCell() to insert a cell at the beginning of the row but it relies on length of the rows
+  }
 }
+
 
 // Remove a row
 function removeR() {
