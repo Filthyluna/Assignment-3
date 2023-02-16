@@ -21,10 +21,9 @@ function addC() {
 
 // Remove a row
 function removeR() {
-  // let table = document.getElementById("grid");
-  // let row_remove = table.rows.length - 1;
-  // table.deleteRow(row_remove);
-
+  let table = document.getElementById("grid");
+  let row_remove = table.rows.length - 1;
+  table.deleteRow(row_remove);
 }
 
 // Remove a column
