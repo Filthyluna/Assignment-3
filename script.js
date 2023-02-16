@@ -5,7 +5,7 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    
 }
 
 // Add a column
