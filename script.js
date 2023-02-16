@@ -31,11 +31,16 @@ function removeR() {
   let table = document.getElementById("grid");
   let row_remove = table.rows.length - 1;
   table.deleteRow(row_remove);
+  numRows--;
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+  let table = document.getElementById("grid");
+  for(let i = 0; i < table.rows.length; i++){
+    table.rows[i].deleteCell(-1);
+  }
+  numCols--;
 }
 
 // Set global variable for selected color
