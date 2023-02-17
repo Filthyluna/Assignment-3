@@ -63,6 +63,18 @@ function fillAll(){
   }
 }
 
+function fillOne(){
+  //click single cell and fill it with selected color
+  let table = document.getElementById("grid");
+  for (let i = 0; i < table.rows.length; i++){
+    for (let j = 0; j < table.rows[i].cells.length; j++){
+      table.rows[i].cells[j].onclick = function(){
+        this.style.backgroundColor = colorSelected;
+      }
+    }
+  }
+}
+
 // Clear all cells
 function clearAll(){
   let table = document.getElementById("grid");
