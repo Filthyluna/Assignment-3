@@ -1,35 +1,34 @@
 // Declare global variables
 let numRows = 2;
-let numCols = 4;
+let numCols = 3;
 let colorSelected; 
 let table = document.getElementById("grid"); // Get the table
 
 // Add a row
 function addR() {
-  let col = table.rows[0].cells.length;  // Get the number of columns
   if (numCols === 0) {
-    addC();
+    addC()
   }
   else {
-    let newRow = table.insertRow(-1); // Insert a row at the end of the table
-    for (let i = 0; i < col; i++) { // Loop through the number of columns
-      newRow.insertCell(i); // Insert a cell at the end of the row and the length of the number of columns
+    newRow = table.insertRow(-1);
+    for (let i = 0; i < numCols; i++){
+      newRow.insertCell(i);
     }
-    numRows++;
+    grid.appendChild(newRow);
   }
 }
 
 // Add a column
 function addC() {
-  let row = table.rows.length; // Get the number of rows
+  let tableRows = document.getElementById("grid").querySelectorAll("tr")// Get the number of rows
   if (numRows === 0) {
     addR()
   }
   else {
-    for (let i = 0; i < row; i++) { // Loop through the number of rows
-      table.rows[i].insertCell(-1); // Insert a cell at the end of the columns and the length of the number of rows 
-      //Can have -1 or i for the second parameter of insertCell() to insert a cell at the beginning of the row but it relies on length of the rows
-    }
+    tableRows.forEach(row => { // Loop through the number of rows
+      let cell = document.createElement('td');
+      row.appendChild(cell);
+    });
     numCols++;
   }
 }
